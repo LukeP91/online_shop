@@ -1,0 +1,6 @@
+<tr>
+  <th><%= product.code %><th>
+  <th><%= product.name %></th>
+  <th><%= "#{product.price}  PLN" %></th>
+  <th><%= link_to "Add", carts_add_path(product_id: product.id), method: :post %></th>
+</tr>

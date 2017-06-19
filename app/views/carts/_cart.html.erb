@@ -1,0 +1,22 @@
+<div class = "col col-md-5">
+  <h3>Your cart:</h3>
+  <% if @cart.cart_items.empty? %>
+    <p>There are no items in your cart.</p>
+  <% end %>
+  <% unless @cart.cart_items.empty? %>
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <tr>
+          <th>Name</th>
+          <th>Quantity</th>
+          <th>Cost</th>
+          <th></th>
+        </tr>
+        <% @cart.cart_items.each do |item| %>
+          <%= render 'carts/cart_item', item: item%>
+        <% end %>
+      </table>
+    </div>
+  <% end %>
+  <p>Total: 10 PLN</p>
+</div>

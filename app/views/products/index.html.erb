@@ -1,24 +1,4 @@
-<div class = "col col-md-8">
-  <h1>Products available in store</h1>
-  <div class="table-responsive">
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>Code<th>
-          <th>Name</th>
-          <th>Price</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @products.each do |product| %>
-          <tr>
-            <th><%= product.code %><th>
-            <th><%= product.name %></th>
-            <th><%= "#{product.price}  PLN" %></th>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
+<div class = "row">
+  <%= render 'products/products_table'%>
+  <%= render 'carts/cart'%>
 </div>
-
