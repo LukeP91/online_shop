@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
     <title>OnlineShop</title>
     <%= csrf_meta_tags %>
 
@@ -9,6 +10,7 @@
   </head>
 
   <body>
+    <%= render 'layouts/navbar'%>
     <%= yield %>
   </body>
 </html>

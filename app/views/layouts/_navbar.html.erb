@@ -1,0 +1,15 @@
+    <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse mb-4">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <%= link_to 'Online shop', root_path, class: "navbar-brand" %>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav mr-auto">
+          <%= link_to 'Orders', root_path, class: "nav-item nav-link" %>
+        </div>
+        <div class="navbar-nav mt-4 mt-md-0">
+          <%= link_to 'Login', root_path, class: "nav-item nav-link right" %>
+          <%= link_to 'Logout', root_path, class: "nav-item nav-link navbar-right" %>
+        </div>                  
+      </div>
+    </nav>
