@@ -1,4 +1,6 @@
 class Order < ActiveRecord::Base
+  has_many :order_items
+  
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :email, presence: true
