@@ -5,11 +5,17 @@
       <%= link_to 'Online shop', root_path, class: "navbar-brand" %>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav mr-auto">
-          <%= link_to 'Orders', root_path, class: "nav-item nav-link" %>
+          <% if admin_signed_in? %>
+            <%= link_to 'Orders', root_path, class: "nav-item nav-link" %>
+          <% end %>
         </div>
         <div class="navbar-nav mt-4 mt-md-0">
-          <%= link_to 'Login', root_path, class: "nav-item nav-link right" %>
-          <%= link_to 'Logout', root_path, class: "nav-item nav-link navbar-right" %>
+          <% if admin_signed_in? %>
+            <%= link_to 'Logout', destroy_admin_session_path, 
+              method: :delete, class: "nav-item nav-link navbar-right" %>
+          <% else %>
+            <%= link_to 'Login', new_admin_session_path, class: "nav-item nav-link right" %>
+          <% end %>          
         </div>                  
       </div>
     </nav>
