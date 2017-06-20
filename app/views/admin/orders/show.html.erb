@@ -1,43 +1,6 @@
 <div class = "col col-md-8">
   <h1>Order summary</h1>
-  <div>
-    <p><%= "First name: #{@order.first_name}" %></p>
-    <p><%= "Last name: #{@order.last_name}" %></p>
-    <p><%= "Email: #{@order.email}" %></p>
-    <p><%= "Street: #{@order.street}" %></p>
-    <p><%= "City: #{@order.city}" %></p>
-    <p><%= "Country: #{@order.country}" %></p>
-    <p><%= "Zip code: #{@order.zip_code}" %></p>
-    <p><%= "House Number: #{@order.house_number}" %></p>
-    <p><%= "Aparatment number: #{@order.apartment_number}" %></p>
-  </div>
-  <div class="table-responsive">
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Quantity</th>
-          <th>Cost</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @order_items.each do |item| %>
-          <tr>
-            <th>
-              <%= item.name %>
-            </th>
-            <th>
-              <%= item.quantity %>
-            </th>
-            <th>
-              <%= "#{sprintf('%.2f', item.price)} PLN" %>
-            </th>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
+  <%= render 'admin/orders/order_information'%>
+  <%= render 'admin/orders/order_order_items_table'%>
+  <%= link_to "Back", admin_orders_path, class: "btn btn-primary"%>
 </div>
-
-<p><%= "Total: #{sprintf('%.2f', @order.total)} PLN" %></p>
-<%= link_to "Back", admin_orders_path%>

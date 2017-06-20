@@ -1,0 +1,25 @@
+<div class="orderInformation">
+  <div class="row">
+    <div class="col col-md-5">
+      <h4>Client information:</h4>
+      <p><%= "First name: #{@order.first_name}" %></p>
+      <p><%= "Last name: #{@order.last_name}" %></p>
+      <p><%= "Email: #{@order.email}" %></p>
+    </div>
+    <div class="col col-md-6">
+      <h4>Address information:</h4>
+      <div class="row">
+        <div class="col col-md-6">
+          <p><%= "Street: #{@order.street}" %></p>
+          <p><%= "City: #{@order.city}" %></p>
+          <p><%= "Country: #{@order.country}" %></p>
+        </div>
+        <div class="col col-md-6">
+          <p><%= "Zip code: #{@order.zip_code}" %></p>
+          <p><%= "House Number: #{@order.house_number}" %></p>
+          <p><%= "Aparatment number: #{@order.apartment_number}" %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Quantity</th>
+        <th>Cost</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @order_items.each do |item| %>
+        <tr>
+          <th>
+            <%= item.name %>
+          </th>
+          <th>
+            <%= item.quantity %>
+          </th>
+          <th>
+            <%= "#{sprintf('%.2f', item.price)} PLN" %>
+          </th>
+        </tr>
+      <% end %>
+      <tr class="table-active">
+        <th></th>
+        <th>Total:</th>
+        <th><%= " #{sprintf('%.2f', @order.total)} PLN" %></th>
+      </tr>
+    </tbody>
+  </table>
+</div>
