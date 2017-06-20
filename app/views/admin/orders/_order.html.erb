@@ -1,7 +1,7 @@
 <tr>
-  <th><%= order.id %><th>
-  <th><%= order.first_name %><th>
+  <th><%= order.id %></th>
+  <th><%= order.first_name %></th>
   <th><%= order.last_name %></th>
   <th><%= order.email %></th>
-  <th><%= link_to "Show", admin_order_path(order) %></th>
+  <th><%= link_to "Show", admin_order_path(order), class: "btn btn-primary fa fa-file-text"%></th>
 </tr>
