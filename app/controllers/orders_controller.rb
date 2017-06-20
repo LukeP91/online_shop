@@ -15,7 +15,7 @@ class OrdersController < ApplicationController
       OrderMailer.order_summary_email(@order).deliver_now
       redirect_to root_path
     else
-      redirect_to root_path, notice: "Something went wrong"
+      render 'new', notice: "Something went wrong"
     end
   end
 
