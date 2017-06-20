@@ -1,6 +1,10 @@
 class Cart < ActiveRecord::Base
   has_many :cart_items, dependent: :destroy
 
+  def total
+    total = cart_items.map{ |cart_item| cart_item.cost }.reduce(0, :+)
+  end
+
   def add_product_to_cart(product_id)
     current_item = cart_items.find_by(product_id: product_id)
     if current_item
