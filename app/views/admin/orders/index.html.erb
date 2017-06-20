@@ -1,0 +1,21 @@
+<div class = "col col-md-8">
+  <h1>List of all orders:</h1>
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>ID<th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+          <th>Show</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @orders.each do |order| %>
+          <%= render 'admin/orders/order', order: order%>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

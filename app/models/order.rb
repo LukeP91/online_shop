@@ -19,4 +19,8 @@ class Order < ActiveRecord::Base
                         )
     end
   end
+
+  def total
+    total = order_items.map{ |item| item.price }.reduce(0, :+)
+  end
 end
