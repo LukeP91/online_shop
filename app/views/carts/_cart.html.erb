@@ -17,6 +17,7 @@
         <% end %>
       </table>
     </div>
+    <p><%= "Total: #{sprintf('%.2f', @cart.total)} PLN" %></p>
+    <%= link_to "Checkout", new_order_path%>
   <% end %>
-  <p><%= "Total: #{sprintf('%.2f', @cart.total)} PLN" %></p>
 </div>

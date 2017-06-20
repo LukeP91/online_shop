@@ -3,4 +3,5 @@ Rails.application.routes.draw do
 
   post '/carts/add', to: 'carts#add_item'
   post '/carts/remove', to: 'carts#remove_item'
+  resources :orders, only: [:new, :create]
 end
