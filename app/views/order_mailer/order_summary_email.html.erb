@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Order summary</h1>
+    <p>
+      Hi <%= "#{@order.first_name} #{@order.last_name}"%>,
+      your order has been successfully made.
+      Below you will find information about shipping adress you have provided and order summary. 
+    </p>
+    <p>Shipping adress:
+    <%= "#{@order.street} #{@order.house_number}/#{@order.apartment_number}" %>
+    <%= "#{@order.city}, #{@order.zip_code}" %>
+    <%= "#{@order.country}" %></p>
+    <p>Order summary:</p>
+    <table>
+      <head>
+        <tr>
+          <th>Name</th>
+          <th>Quantity</th>
+          <th>Cost</th>
+        </tr>
+      </head>
+      <body>
+        <% @order.order_items.each do |item| %>
+          <tr>
+            <th>
+              <%= item.name %>
+            </th>
+            <th>
+              <%= item.quantity %>
+            </th>
+            <th>
+              <%= "#{sprintf('%.2f', item.price)} PLN" %>
+            </th>
+          </tr>
+        <% end %>
+        <tr>
+          <th></th>
+          <th>Total:</th>
+          <th><%= " #{sprintf('%.2f', @order.total)} PLN" %></th>
+        </tr>
+      </body>
+    </table>
+    <p>Thanks for shopping and have a great day!</p>
+  </body>
+</html>

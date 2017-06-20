@@ -1,0 +1,17 @@
+Order summary.
+
+Hi <%= "#{@order.first_name} #{@order.last_name}"%>,
+your order has been successfully made.
+Below you will find information about shipping adress you have provided and order summary. 
+
+Shipping adress:
+<%= "#{@order.street} #{@order.house_number}/#{@order.apartment_number}" %>
+<%= "#{@order.city}, #{@order.zip_code}" %>
+<%= "#{@order.country}" %>
+Order summary:
+<% @order.order_items.each do |item| %>
+<%= item.name %>  <%= item.quantity %> <%= "#{sprintf('%.2f', item.price)} PLN" %>
+<% end %>
+Total: <%= " #{sprintf('%.2f', @order.total)} PLN" %>
+
+Thanks for shopping and have a great day!

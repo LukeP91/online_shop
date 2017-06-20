@@ -12,6 +12,7 @@ class OrdersController < ApplicationController
       session[:cart_id] = nil
       @order.add_items_to_order(cart)
       Cart.destroy(cart.id)
+      OrderMailer.order_summary_email(@order).deliver_now
       redirect_to root_path
     else
       redirect_to root_path, notice: "Something went wrong"
