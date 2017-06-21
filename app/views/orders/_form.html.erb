@@ -1,64 +1,63 @@
-<%= form_for @order do |f| %>
-  <% if @order.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize( @order.errors.count, "error") + " need to be fixed" %>
-      </h2>
-      <ul>
-        <% @order.errors.full_messages.each do |message| %>
-          <li>
-            <%= message %>
-          </li>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 offset-md-1">
+      
+      <%= form_for @order do |f| %>
+        <% if @order.errors.any? %>
+          <div id="error_explanation">
+            <h2>
+              <%= pluralize( @order.errors.count, "error") + " need to be fixed" %>
+            </h2>
+            <ul>
+              <% @order.errors.full_messages.each do |message| %>
+                <li>
+                  <%= message %>
+                </li>
+              <% end %>
+            </ul>
+          </div>
         <% end %>
-      </ul>
+        <h2 class="form-signin-heading">Make order</h2>
+        <div class="field">
+          <%= f.text_field :first_name, placeholder: 'First name',
+            class: 'form-control' %>
+        </div>
+        <div class="field">
+          <%= f.text_field :last_name, placeholder: 'Last name',
+            class: 'form-control' %>
+        </div>
+        <div class="field">
+          <%= f.text_field :email, placeholder: 'Email',
+            class: 'form-control' %>
+        </div>
+        <div class="field">
+          <%= f.text_field :street, placeholder: 'Street',
+            class: 'form-control' %>
+        </div>
+          <div class="field">
+          <%= f.text_field :city, placeholder: 'City',
+            class: 'form-control' %>
+        </div>
+        <div class="field">
+          <%= f.text_field :country, placeholder: 'Country',
+            class: 'form-control' %>
+        </div>
+        <div class="field">
+          <%= f.text_field :zip_code, placeholder: 'Zip code',
+            class: 'form-control' %>
+        </div>
+        <div class="field">
+          <%= f.text_field :house_number, placeholder: 'House number',
+            class: 'form-control' %>
+        </div>
+        <div class="field">
+          <%= f.text_field :apartment_number, placeholder: 'Apartment number',
+            class: 'form-control' %>
+        </div>
+        <div class="actions">
+          <%= f.submit "Checkout", class: 'btn btn-lg btn-success btn-block' %>
+        </div>
+      <% end %>
     </div>
-  <% end %>
-  <div id="field">
-    <%= f.label :first_name %>
-    <br/>
-    <%= f.text_field :first_name %>
   </div>
-  <div id="field">
-    <%= f.label :last_name %>
-    <br/>
-    <%= f.text_field :last_name %>
-  </div>
-  <div id="field">
-    <%= f.label :email %>
-    <br/>
-    <%= f.text_field :email %>
-  </div>
-  <div id="field">
-    <%= f.label :street %>
-    <br/>
-    <%= f.text_field :street %>
-  </div>
-    <div id="field">
-    <%= f.label :city %>
-    <br/>
-    <%= f.text_field :city %>
-  </div>
-  <div id="field">
-    <%= f.label :country %>
-    <br/>
-    <%= f.text_field :country %>
-  </div>
-  <div id="field">
-    <%= f.label :zip_code %>
-    <br/>
-    <%= f.text_field :zip_code %>
-  </div>
-  <div id="field">
-    <%= f.label :house_number %>
-    <br/>
-    <%= f.text_field :house_number %>
-  </div>
-  <div id="field">
-    <%= f.label :apartment_number %>
-    <br/>
-    <%= f.text_field :apartment_number %>
-  </div>
-  <div id="field">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>

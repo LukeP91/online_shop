@@ -1,8 +1,8 @@
 <div class="container">
   <div class="row">
     <div class="col-md-4 offset-md-4">
-      <h2 class="form-signin-heading">Please sign in</h2>
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <h2 class="form-signin-heading">Please sign in</h2>
         <div class="field">
           <%= f.email_field :email, autofocus: true, placeholder: 'Email address', 
             class: 'form-control', id: "inputEmail" %>
@@ -23,8 +23,8 @@
         <div class="actions">
           <%= f.submit "Sign in", class: 'btn btn-lg btn-primary btn-block' %>
         </div>
+        <%= render "devise/shared/links" %>
       <% end %>
-      <%= render "devise/shared/links" %>
     </div>
   </div>
 </div>
