@@ -51,5 +51,6 @@ describe "Customer actions", :type => :feature do
                                            zip_code: "00-000",
                                            house_number: "1",
                                            apartment_number: 1)
+    expect(ActionMailer::Base.deliveries.count).to eq 1
   end 
 end
