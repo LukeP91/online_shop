@@ -8,7 +8,6 @@ class Order < ActiveRecord::Base
   validates :country, presence: true
   validates :city, presence: true
   validates :zip_code, presence: true
-  validates :apartment_number, numericality: { only_integer: true }
 
   def add_items_to_order(cart)
     cart.cart_items.each do |item|
