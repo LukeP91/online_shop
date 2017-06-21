@@ -4,5 +4,5 @@
   <th><%= item.cost %></th>
   <th><%= link_to "<i class=\"fa fa-minus\"></i>".html_safe, 
     carts_remove_path(cart_item_id: item.id), 
-    method: :post %></th>
+    method: :post, id: "remove_item" %></th>
 </tr>

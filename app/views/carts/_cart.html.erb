@@ -1,11 +1,11 @@
-<div class = "col col-md-3 offset-md-1">
+<div class = "col col-md-3 offset-md-1" id="cart">
   <h3>Your cart:</h3>
   <% if @cart.cart_items.empty? %>
     <p>There are no items in your cart.</p>
   <% end %>
   <% unless @cart.cart_items.empty? %>
     <div class="table-responsive">
-      <table class="table table-striped">
+      <table class="table table-striped" id="cart_items_table">
         <tr>
           <th>Name</th>
           <th>Quantity</th>
