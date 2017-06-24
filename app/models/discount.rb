@@ -1,8 +1,7 @@
 class Discount
-  #Buy one get one for free fruit tea
   def self.buy_one_get_one_for_free(price:, quantity:)
-    return (price * quantity)/2 if quantity%2 == 0
-    (price * (quantity-1))/2 + price
+    return (price * quantity) / 2 if quantity.even?
+    (price * (quantity - 1)) / 2 + price
   end
 
   def self.bulk_purchase(original_price:, discounted_price:, quantity:, bulk_requirement:)

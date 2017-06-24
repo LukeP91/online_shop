@@ -14,12 +14,11 @@ class Order < ActiveRecord::Base
       order_items.create(code: item.product.code,
                          name: item.product.name,
                          price: item.cost,
-                         quantity: item.quantity
-                        )
+                         quantity: item.quantity)
     end
   end
 
   def total
-    total = order_items.map{ |item| item.price }.reduce(0, :+)
+    order_items.map(&:price).reduce(0, :+)
   end
 end

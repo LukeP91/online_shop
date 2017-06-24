@@ -1,5 +1,4 @@
 class AddItem
-
   class AddItemError < StandardError; end
 
   def execute(cart, product_id)
