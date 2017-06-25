@@ -9,15 +9,6 @@ class Order < ActiveRecord::Base
   validates :city, presence: true
   validates :zip_code, presence: true
 
-  def add_items_to_order(cart)
-    cart.cart_items.each do |item|
-      order_items.create(code: item.product.code,
-                         name: item.product.name,
-                         price: item.cost,
-                         quantity: item.quantity)
-    end
-  end
-
   def total
     order_items.map(&:price).reduce(0, :+)
   end

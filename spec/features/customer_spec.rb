@@ -39,18 +39,18 @@ describe "Customer actions", :type => :feature do
       fill_in 'order_house_number', with: '1'
       fill_in 'order_apartment_number', with: '1'
       click_button 'Checkout'
-    end  
+    end
     expect(page).to have_css("p", text: "There are no items in your cart.")
     expect(Order.count).to eq 1
-    expect(Order.first).to have_attributes(first_name: "Test", 
+    expect(Order.first).to have_attributes(first_name: "Test",
                                            last_name: "User",
                                            email: "user@test.com",
                                            street: "Street",
-                                           city: "City", 
+                                           city: "City",
                                            country: "Country",
                                            zip_code: "00-000",
                                            house_number: "1",
                                            apartment_number: 1)
     expect(ActionMailer::Base.deliveries.count).to eq 1
-  end 
+  end
 end

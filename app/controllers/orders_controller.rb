@@ -5,17 +5,13 @@ class OrdersController < ApplicationController
   end
 
   def create
-    cart = user_cart
-    @order = Order.new(order_params)
-
-    if @order.save
+    begin
+      CreateOrder.new.execute(user_cart, order_params)
       session[:cart_id] = nil
-      @order.add_items_to_order(cart)
-      Cart.destroy(cart.id)
-      OrderMailer.order_summary_email(@order).deliver_now
       redirect_to root_path
-    else
-      render 'new', notice: "Something went wrong"
+    rescue CreateOrder::CreateOrderError
+      flash[:alert] = 'There was some error. Please try again'
+      redirect_to root_path
     end
   end
 
